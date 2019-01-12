@@ -1,10 +1,10 @@
 // 首页
-import home from './components/home.vue'
+import home from './components/home'
 // 博客路由
-import ShowBlogs from './components/blog/ShowBlogs.vue'
-import AddBlog from './components/blog/AddBlog.vue'
-import SingleBlog from './components/blog/SingleBlog.vue'
-import EditBlog from './components/blog/EditBlog.vue'
+import ShowBlogs from './page/blog/ShowBlogs'
+import AddBlog from './page/blog/AddBlog'
+import SingleBlog from './page/blog/SingleBlog'
+import EditBlog from './page/blog/EditBlog'
 export default[
   {
     path: '/', 

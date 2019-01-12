@@ -46,7 +46,7 @@
 
 <script>
 import axios from 'axios'
-import BlogHeader from './../../components/blog/BlogHeader'
+import BlogHeader from '../../page/blog/BlogHeader'
 export default {
   name: 'add-blog',
   data () {
