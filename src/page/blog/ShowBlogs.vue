@@ -98,15 +98,16 @@ export default {
     /* 导航样式 */
     .nav{background:#fff;width: 100%;position: fixed;left: 0;top: 0;z-index: 12;height: 96px;}
     .nav:after { box-sizing: border-box; content: '';position: absolute;left: 0;right: 0;bottom: 0;border-bottom: 1px solid rgba(187,187,187,.2);box-shadow: 0 0 5px 0 rgba(0,0,0,.1);box-sizing: border-box;}
-    .nav .navCont{max-width: 1200px;margin: 0 auto; height: 96px;}
+    .nav .navCont{width: 1176px;margin: 0 auto; height: 96px; padding: 0 12px;}
     .navCenter{display: inline-block;width: 100%;}
     .logo{float: left;padding-top: 24px;padding-bottom: 18px;margin-right: 30px;}
     .logo .logo-b{display: inline-block;width: 130px;}
+    .logo-b img{width: 100%;}
     .navBar{display: inline-block;padding: 0;width: auto;margin-left: 12px;}
-    .navBar li{margin: 28px 0;padding: 0;list-style: none; float: left;}
-    .navBar li a {text-decoration:none; position: relative; display: block;height: 38px;line-height: 38px;color: #2c2950;font-size: 18px;padding: 0 25px;}
+    .navBar li{margin: 26px 0;padding: 0;list-style: none; float: left;}
+    .navBar li a {text-decoration:none; position: relative; display: block;height: 42px;line-height: 42px;color: #2c2950;font-size: 18px;padding: 0 25px;}
     .router-link-active span {color: #FF8A04;}
-    .router-link-active span:after {position: absolute;left: 42px;bottom: 0;content: "";height: 0;width: 35px;border-bottom: 3px solid #FF8A04;color: #FF8A04;}
+    .router-link-active span:after {position: absolute;left: 42px;bottom: -2px;content: "";height: 0;width: 35px;border-bottom: 3px solid #FF8A04;color: #FF8A04;}
   
      /* 搜索样式 */
     .search{display: inline-block;width: 270px;position: relative;margin-left: 10px;margin-top: 28px;}

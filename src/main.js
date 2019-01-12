@@ -32,6 +32,8 @@ Vue.directive('theme', {
     if (binding.arg == 'column') {
       el.style.background = "#fff"
       el.style.padding = "20px"
+      el.style.margin = "20px"
+
     }
   }
 })
