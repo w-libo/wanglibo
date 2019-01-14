@@ -137,4 +137,5 @@ select{border: 1px solid #ececec;color: #7e7e7e;padding-left: 10px;}
 .wlb-chenginh{color: #6e6e6e; font-size: 16px;text-align: center;padding-top: 30px;}
 .wlb-gohome{width: 40%; height: 38px; text-align: center;line-height: 34px; border: 2px solid #ff8a04; border-radius: 6px; margin: 60px auto 0 auto;}
 .wlb-gohome a{color:#ff8a04; display: block; text-decoration: none; font-size: 16px; cursor: pointer; font-weight: 600; }
+
 </style>
