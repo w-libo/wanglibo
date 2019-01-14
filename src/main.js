@@ -9,6 +9,8 @@ import App from './App'
 import Routes from './routes'
 import axios from 'axios'
 
+import './assets/common/blogHeader.css' /*引入公共样式*/
+
 // 全局配置
 axios.defaults.baseURL = 'https://wd2895962302enkyee.wilddogio.com'
 

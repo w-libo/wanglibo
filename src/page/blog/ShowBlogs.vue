@@ -27,9 +27,9 @@
     
     <div class="single-blog" v-for="blog in filteredBlogs" :key="blog.value" v-theme:column="'wide'">
         <router-link v-bind:to="'/SingleBlog/' + blog.id">
-            <h2 v-rainbow>{{blog.title | to-uppercase}}</h2>
+            <h2 class="wlb-bt-txt" v-rainbow>{{blog.title | to-uppercase}}</h2>
         </router-link>
-        <article>
+        <article class="wlb-blog-cent">
             {{blog.content | snippet}}
         </article>
     </div>
@@ -95,20 +95,6 @@ export default {
 </script>
 
 <style scoped>
-    /* 导航样式 */
-    .nav{background:#fff;width: 100%;position: fixed;left: 0;top: 0;z-index: 12;height: 96px;}
-    .nav:after { box-sizing: border-box; content: '';position: absolute;left: 0;right: 0;bottom: 0;border-bottom: 1px solid rgba(187,187,187,.2);box-shadow: 0 0 5px 0 rgba(0,0,0,.1);box-sizing: border-box;}
-    .nav .navCont{width: 1176px;margin: 0 auto; height: 96px; padding: 0 12px;}
-    .navCenter{display: inline-block;width: 100%;}
-    .logo{float: left;padding-top: 24px;padding-bottom: 18px;margin-right: 30px;}
-    .logo .logo-b{display: inline-block;width: 130px;}
-    .logo-b img{width: 100%;}
-    .navBar{display: inline-block;padding: 0;width: auto;margin-left: 12px;}
-    .navBar li{margin: 26px 0;padding: 0;list-style: none; float: left;}
-    .navBar li a {text-decoration:none; position: relative; display: block;height: 42px;line-height: 42px;color: #2c2950;font-size: 18px;padding: 0 25px;}
-    .router-link-active span {color: #FF8A04;}
-    .router-link-active span:after {position: absolute;left: 42px;bottom: -2px;content: "";height: 0;width: 35px;border-bottom: 3px solid #FF8A04;color: #FF8A04;}
-  
      /* 搜索样式 */
     .search{display: inline-block;width: 270px;position: relative;margin-left: 10px;margin-top: 28px;}
     input[type="text"]{display: block;width: 100%;background: 0 0;outline: none;border: 1px solid #dddfe6;font-size: 16px;line-height: 28px;padding: 5px 0 5px 34px;border-radius: 30px;font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC","Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing: antialiased;}
@@ -121,8 +107,10 @@ export default {
     input:-ms-input-placeholder{  /* Internet Explorer 10-11 */ color:#dddfe6;}
     
     /* 博客内容样式 */
-    #show-blogs{max-width: 1200px;margin: 110px auto 0 auto;}
+    #show-blogs{max-width: 1200px;margin: 130px auto 0 auto;}
     .single-blog{padding: 20px;margin: 20px 0;box-sizing: border-box;background: #eee;border-radius: 6px;box-shadow: 0px 0px 8px #dad7d7;}
     #show-blogs a{color: #444;text-decoration: none;}
+    .wlb-bt-txt{font-size: 18px;}
+    .wlb-blog-cent{color: #999;font-size: 14px;line-height: 24px;margin-top: 10px;}
 
 </style>
