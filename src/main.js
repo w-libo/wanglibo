@@ -5,15 +5,16 @@
 import Vue from 'vue'
 import VueResource from 'vue-resource'
 import VueRouter from 'vue-router'
+import { Select, Option } from 'element-ui' // 引入element-ui框架
 import App from './App'
 import Routes from './routes'
 import axios from 'axios'
-
-import './assets/common/blogHeader.css' /*引入公共样式*/
-
+import './assets/common/blogHeader.css' /* 引入公共样式 */
+import './assets/css/element.css'
 // 全局配置
 axios.defaults.baseURL = 'https://wd2895962302enkyee.wilddogio.com'
-
+Vue.use(Select)
+Vue.use(Option)
 Vue.use(VueResource)
 Vue.use(VueRouter)
 Vue.config.productionTip = false
@@ -35,7 +36,6 @@ Vue.directive('theme', {
       el.style.background = "#fff"
       el.style.padding = "20px"
       el.style.margin = "20px"
-
     }
   }
 })

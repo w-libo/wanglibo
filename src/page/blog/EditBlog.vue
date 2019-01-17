@@ -27,14 +27,18 @@
     <form v-if="!submmited" class="wlb-addblog">
       <input type="text" placeholder="请输入标题" class="wlb-bod" v-model="blog.title" required>
       <textarea v-model="blog.content" class="wlb-bod" placeholder="请输入博客内容"></textarea>
-      
-        <select v-model="blog.author">
+
+        <!-- <select v-model="blog.author">
           <option value='' disabled selected style='display:none;'>请选择博客分类</option>
           <option  v-for="author in authors" v-bind:key="author">{{author}}</option>
-        </select>
-      
+        </select> -->
+        <el-select v-model="blog.author" placeholder="请选择博客分类">
+          <el-option v-for="item in authors" :key="item.value" :label="item.label" :value="item.value">
+          </el-option>
+        </el-select>
+
       <input type="text" placeholder="请输入作者" class="wlb-bod wlb-top" v-model="blog.zuozhe" required>
-      
+
       <div v-on:click.prevent="post" class="wlb-btn">确认修改</div>
     </form>
 
@@ -71,31 +75,38 @@ export default {
   name: 'add-blog',
   data () {
     return {
-      id:this.$route.params.id,
-      blog:{},
-      authors: ["生活记录", "感情记录","技术记录"],
-      submmited:false
+      id: this.$route.params.id,
+      blog: {},
+      submmited: false,
+      authors: [{
+        value: '生活记录'
+      }, {
+        value: '感情记录'
+      }, {
+        value: '技术记录'
+      }],
+      value: ''
     }
   },
-  methods:{
-    fetchData(){
+  methods: {
+    fetchData: function () {
       // console.log(this.id);
-      this.$http.get('https://wd2895962302enkyee.wilddogio.com/posts/' + this.id + ".json")
-          .then(response => {
-            // console.log(response.body);
-            this.blog = response.body;
-          })
+      this.$http.get('https://wd2895962302enkyee.wilddogio.com/posts/' + this.id + '.json')
+        .then(response => {
+          // console.log(response.body);
+          this.blog = response.body
+        })
     },
-    post:function(){
-      this.$http.put('https://wd2895962302enkyee.wilddogio.com/posts/' + this.id + ".json",this.blog)
-          .then(function(data){
-            console.log(data);
-            this.submmited = true;
-          });
+    post: function () {
+      this.$http.put('https://wd2895962302enkyee.wilddogio.com/posts/' + this.id + '.json', this.blog)
+        .then(function (data) {
+          console.log(data)
+          this.submmited = true
+        })
     }
   },
-  created(){
-    this.fetchData();
+  created () {
+    this.fetchData()
   }
 }
 </script>
@@ -111,10 +122,10 @@ input:-ms-input-placeholder{  /* Internet Explorer 10-11 */ color:#7e7e7e;}
 /* 添加博客 */
 #add-blog * {box-sizing: border-box;}
 #add-blog {margin: 20px auto;max-width: 600px;padding: 20px;}
-input[type="text"],textarea,select {display: block;width: 100%;height:36px; line-height: 36px; margin-bottom: 20px; color: #7e7e7e}
+input[type="text"],textarea,select {display: block;width: 100%;border-radius: 6px;height:40px; line-height: 40px; margin-bottom: 20px; color: #606266;}
 textarea {height: 200px;resize:none;overflow-y: auto; font-size: 14px;line-height: 20px;padding-top: 5px;}
 .wlb-addblog{margin-top: 90px;}
-.wlb-bod{border: 1px solid #ececec;outline: none;padding-left: 12px;padding-right: 2px;}
+.wlb-bod{border: 1px solid #dcdfe6;outline: none;padding-left: 12px;padding-right: 2px;}
 .wlb-top{margin-top: 20px;padding-left: 12px;}
 
 /* textarea滚动条样式 */
@@ -135,4 +146,3 @@ select{border: 1px solid #ececec;color: #7e7e7e;padding-left: 10px;}
 .wlb-gohome a{color:#ff8a04; display: block; text-decoration: none; font-size: 16px; cursor: pointer; font-weight: 600; }
 
 </style>
-

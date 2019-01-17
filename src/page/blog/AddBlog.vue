@@ -27,14 +27,19 @@
     <form v-if="!submmited" class="wlb-addblog">
       <input type="text" placeholder="请输入标题" class="wlb-bod" v-model="blog.title" required>
       <textarea v-model="blog.content" class="wlb-bod" placeholder="请输入博客内容"></textarea>
-      
-        <select v-model="blog.author">
+
+        <!-- <select v-model="blog.author">
           <option value='' disabled selected style='display:none;'>请选择博客分类</option>
           <option  v-for="author in authors" v-bind:key="author">{{author}}</option>
-        </select>
-      
+        </select> -->
+
+        <el-select v-model="blog.author" placeholder="请选择博客分类" >
+          <el-option v-for="item in authors" :key="item.value" :label="item.label" :value="item.value">
+          </el-option>
+        </el-select>
+
       <input type="text" placeholder="请输入作者" class="wlb-bod wlb-top" v-model="blog.zuozhe" required>
-      
+
       <div v-on:click.prevent="post" class="wlb-btn">添加博客</div>
     </form>
 
@@ -47,78 +52,92 @@
         <router-link to="/ShowBlogs">返回首页</router-link>
       </div>
     </div>
-    <!-- <div id="preview">
-      <h3>博客总览</h3>
-      <p>博客标题：{{blog.title}}</p>
-      <p>博客内容:{{blog.content}}</p>
-      <p>博客分类：{{blog.author}}</p>
-      <p>作者：{{blog.zuozhe}}</p>
-    </div>  -->
+    <!--<div id="preview">-->
+      <!--<h3>博客总览</h3>-->
+      <!--<p>博客标题：{{blog.title}}</p>-->
+      <!--<p>博客内容:{{blog.content}}</p>-->
+      <!--<p>博客分类：{{blog.author}}</p>-->
+      <!--<p>作者：{{blog.zuozhe}}</p>-->
+    <!--</div>-->
   </div>
 </template>
 
 <script>
-import axios from "axios";
+import axios from 'axios'
+
 export default {
-  name: "add-blog",
-  data() {
+  name: 'add-blog',
+  data () {
     return {
       blog: {
-        title: "",
-        content: "",
-        author:"",
-        zuozhe: ""
+        title: '',
+        content: '',
+        author: '',
+        zuozhe: ''
       },
-      authors: ["生活记录", "感情记录","技术记录"],
-      submmited: false
-    };
+      // authors: ["生活记录", "感情记录","技术记录"],
+      submmited: false,
+      authors: [{
+        value: '生活记录'
+      }, {
+        value: '感情记录'
+      }, {
+        value: '技术记录'
+      }],
+      value: ''
+    }
   },
+
   methods: {
-    
-    post: function() {
+
+    post: function () {
       // this.$http.post("https://wd2895962302enkyee.wilddogio.com/posts.json",this.blog)
-      if(this.blog.title == ""){
-        alert("请输入博客标题")
-        return false;
+      if (this.blog.title === '') {
+        alert('请输入博客标题')
+        return false
       }
-      if(this.blog.content == ""){
-        alert("请输入博客内容")
-        return false;
+      if (this.blog.content === '') {
+        alert('请输入博客内容')
+        return false
       }
-      if(this.blog.author == ""){
-        alert("请选择博客分类")
-        return false;
+      if (this.blog.author === '') {
+        alert('请选择博客分类')
+        return false
       }
-      if(this.blog.zuozhe == ""){
-        alert("请输入作者")
-        return false;
+      if (this.blog.zuozhe === '') {
+        alert('请输入作者')
+        return false
       }
-      axios.post("https://wd2895962302enkyee.wilddogio.com/posts.json", this.blog)
+      axios.post('https://wd2895962302enkyee.wilddogio.com/posts.json', this.blog)
         .then(data => {
-          //console.log(data);
-          this.submmited = true;
-        });
+          // console.log(data);
+          this.submmited = true
+        })
     }
   }
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
 /* placeholder样式 */
-input::-webkit-input-placeholder{color:#7e7e7e;color:#7e7e7e;}
-input::-moz-placeholder{   /* Mozilla Firefox 19+ */ color:#7e7e7e;}
-input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */color:#7e7e7e;}
-input:-ms-input-placeholder{  /* Internet Explorer 10-11 */ color:#7e7e7e;}
+input::-webkit-input-placeholder{color:#cecece;color:#cecece;}
+input::-moz-placeholder{   /* Mozilla Firefox 19+ */ color:#cecece;}
+input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */color:#cecece;}
+input:-ms-input-placeholder{  /* Internet Explorer 10-11 */ color:#cecece;}
+textarea::-webkit-input-placeholder{color:#cecece;color:#cecece;}
+textarea::-moz-placeholder{   /* Mozilla Firefox 19+ */ color:#cecece;}
+textarea:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */color:#cecece;}
+textarea:-ms-input-placeholder{  /* Internet Explorer 10-11 */ color:#cecece;}
 
 /* 添加博客 */
 #add-blog * {box-sizing: border-box;}
 #add-blog {margin: 20px auto;max-width: 600px;padding: 20px;}
-input[type="text"],textarea,select {display: block;width: 100%;height:36px; line-height: 36px; margin-bottom: 20px; color: #7e7e7e}
+input[type="text"],textarea,select {display: block;width: 100%;height:40px; border-radius: 6px; line-height: 40px; margin-bottom: 20px; color: #606266;}
 textarea {height: 200px;resize:none;overflow-y: auto; font-size: 14px;line-height: 20px;padding-top: 5px;}
 .wlb-addblog{margin-top: 90px;}
-.wlb-bod{border: 1px solid #ececec;outline: none;padding-left: 12px;padding-right: 2px;}
+.wlb-bod{border: 1px solid #dcdfe6;outline: none;padding-left: 12px;padding-right: 2px;}
 .wlb-top{margin-top: 20px;padding-left: 12px;}
 
 /* textarea滚动条样式 */

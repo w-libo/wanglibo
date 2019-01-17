@@ -1,0 +1,5 @@
+/*修改element-ui默认select样式框*/
+.el-select-dropdown__item.selected {color: #ff8a04;font-weight: 700;}
+.el-select .el-input.is-focus .el-input__inner {border-color: #dcdfe6;}
+.el-select .el-input__inner:focus {border-color: #dcdfe6;}
+.el-select {width: 100%;}

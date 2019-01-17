@@ -3,7 +3,8 @@
     <router-link to="/ShowBlogs">
       <button class="btn btn-default">点击跳转</button>
     </router-link>
-    <router-view></router-view>
+    
+    
   </div>
 </template>
 
@@ -16,6 +17,7 @@ export default {
     }
   },
 
+  
 }
 </script>
 

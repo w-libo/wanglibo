@@ -10,17 +10,26 @@
 
 <script>
 import home from './components/home'
+
 // import addBlog from './components/blog/addBlog'
 // import ShowBlogs from './components/blog/ShowBlogs'
 // import BlogHeader from './components/blog/BlogHeader'
 // import SingleBlog from './components/blog/SingleBlog'
 export default {
   name: 'App',
+  data(){
+      return{
+
+      }
+
+  },
   components: {
     home
-  }
+  },
 }
 </script>
 
 <style>
+
+
 </style>

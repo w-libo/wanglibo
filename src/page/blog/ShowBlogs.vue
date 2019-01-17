@@ -97,7 +97,7 @@ export default {
 <style scoped>
      /* 搜索样式 */
     .search{display: inline-block;width: 270px;position: relative;margin-left: 10px;margin-top: 28px;}
-    input[type="text"]{display: block;width: 100%;background: 0 0;outline: none;border: 1px solid #dddfe6;font-size: 16px;line-height: 28px;padding: 5px 0 5px 34px;border-radius: 30px;font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC","Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing: antialiased;}
+    input[type="text"]{display: block;width: 100%;    height: 38px;text-indent: 40px;margin-top: 2px;background: 0 0;outline: none;border: 1px solid #dddfe6;font-size: 16px;border-radius: 30px;font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC","Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing: antialiased;}
     .ico{display: block;position: absolute;width: 15px;height: 15px;left: 15px;top: 13px;background: url(../../assets/images/wlb1.png) no-repeat;background-size: 100%;}
   
     /* placeholder样式 */
