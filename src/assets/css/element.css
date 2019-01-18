@@ -3,3 +3,6 @@
 .el-select .el-input.is-focus .el-input__inner {border-color: #dcdfe6;}
 .el-select .el-input__inner:focus {border-color: #dcdfe6;}
 .el-select {width: 100%;}
+
+/*修改element-ui默认走马灯选中样式*/
+.el-carousel__indicator.is-active button {opacity: 1;background:#ff8a04;}
