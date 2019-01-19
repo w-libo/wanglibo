@@ -11,6 +11,11 @@
           </div>
           <ul class="navBar">
             <li>
+              <router-link to="/" exact="exact">
+                <span>首页</span>
+              </router-link>
+            </li>
+            <li>
               <router-link to="/ShowBlogs" exact="exact">
                 <span>浏览博客</span>
               </router-link>

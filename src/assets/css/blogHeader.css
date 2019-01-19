@@ -12,3 +12,7 @@
 .router-link-active span {color: #ff8a04;}
 .router-link-active span:after {position: absolute;left: 42px;bottom: -2px;content: "";height: 0;width: 35px;border-bottom: 3px solid #ff8a04;color: #ff8a04;}
 .navBar li a:hover{color: #ff8a04;}
+
+/*清除苹果默认样式*/
+input[type="button"], input[type="submit"], input[type="reset"] {-webkit-appearance: none;}
+textarea {  -webkit-appearance: none;}

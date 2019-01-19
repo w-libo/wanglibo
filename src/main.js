@@ -13,7 +13,7 @@ import Routes from './routes'
 import axios from 'axios'
 
 // 全局样式引入
-import './assets/common/blogHeader.css' /* 引入公共样式 */
+import './assets/css/blogHeader.css' /* 引入公共样式 */
 import './assets/css/element.css' /* 引入element-ui样式 */
 import 'swiper/dist/css/swiper.css'
 // 全局配置

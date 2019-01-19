@@ -10,6 +10,11 @@
           </div>
           <ul class="navBar">
             <li>
+              <router-link to="/" exact="exact">
+                <span>首页</span>
+              </router-link>
+            </li>
+            <li>
               <router-link to="/ShowBlogs" exact="exact">
                 <span>浏览博客</span>
               </router-link>
@@ -40,35 +45,35 @@
 </div>
 </template>
 <script>
-    import axios from 'axios'
-    export default{
-        name:"single-blog",
-        data(){
-            return{
-                id:this.$route.params.id,
-                blog:{}
-            }
-        },
-        created(){
-            // this.$http.get("https://wd2895962302enkyee.wilddogio.com/posts/" + this.id + ".json")
-            axios.get("/posts/" + this.id + ".json")
-            .then((data)=>{
-                //console.log(data)
-                //this.blog = data.body;
-                //return  data.json();
-                this.blog = data.data;
-            })
-        },
-        methods:{
-            deleteSingleBlog(){
-                axios.delete("/posts/" + this.id + ".json")
-                .then(response =>{
-                    this.$router.push({path: '/ShowBlogs',})
-                })
-            }
-        }
+import axios from 'axios'
+export default{
+  name: 'single-blog',
+  data () {
+    return {
+      id: this.$route.params.id,
+      blog: {}
     }
-   
+  },
+  created () {
+    // this.$http.get("https://wd2895962302enkyee.wilddogio.com/posts/" + this.id + ".json")
+    axios.get('/posts/' + this.id + '.json')
+      .then((data) => {
+        // console.log(data)
+        // this.blog = data.body;
+        // return  data.json();
+        this.blog = data.data
+      })
+  },
+  methods: {
+    deleteSingleBlog () {
+      axios.delete('/posts/' + this.id + '.json')
+        .then(response => {
+          this.$router.push({path: '/ShowBlogs'})
+        })
+    }
+  }
+}
+
 </script>
 <style scoped>
 #single-blog{max-width: 1200px;margin: 130px auto 0 auto;}
