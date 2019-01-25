@@ -30,20 +30,21 @@
       </div>
     </div>
     <form v-if="!submmited" class="wlb-addblog">
+      <!--博客标题-->
       <input type="text" placeholder="请输入标题" class="wlb-bod" v-model="blog.title" required>
+      <!--博客内容-->
       <textarea v-model="blog.content" class="wlb-bod" placeholder="请输入博客内容"></textarea>
-
-        <!-- <select v-model="blog.author">
-          <option value='' disabled selected style='display:none;'>请选择博客分类</option>
-          <option  v-for="author in authors" v-bind:key="author">{{author}}</option>
-        </select> -->
-        <el-select v-model="blog.author" placeholder="请选择博客分类">
-          <el-option v-for="item in authors" :key="item.value" :label="item.label" :value="item.value">
-          </el-option>
-        </el-select>
-
+      <!--博客分类-->
+      <el-select v-model="blog.author" placeholder="请选择博客分类">
+        <el-option v-for="item in authors" :key="item.value" :label="item.label" :value="item.value">
+        </el-option>
+      </el-select>
+       <!--博客作者-->
       <input type="text" placeholder="请输入作者" class="wlb-bod wlb-top" v-model="blog.zuozhe" required>
-
+      <!--博客时间-->
+      <div class="block">
+        <el-date-picker v-model="blog.value2" align="center" type="date" value-format="yyyy-MM-dd" format="yyyy 年 MM 月 dd 日" placeholder="选择博客创建日期" ></el-date-picker>
+      </div>
       <div v-on:click.prevent="post" class="wlb-btn">确认修改</div>
     </form>
 
@@ -56,20 +57,6 @@
         <router-link to="/ShowBlogs">返回首页</router-link>
       </div>
     </div>
-
-    <!-- <div id="preview">
-      <h3>博客总览</h3>
-      <p>博客标题: {{blog.title}}</p>
-      <p>博客内容:</p>
-      <p>{{blog.content}}</p>
-      <p>博客分类:</p>
-      <ul>
-        <li v-for="category in blog.categories" :key="category">
-          {{category}}
-        </li>
-      </ul>
-      <p>作者: {{blog.author}}</p>
-    </div> -->
   </div>
 </template>
 
@@ -118,6 +105,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  @import './../../assets/css/blogHeader.css';
 /* placeholder样式 */
 input::-webkit-input-placeholder{color:#7e7e7e;color:#7e7e7e;}
 input::-moz-placeholder{   /* Mozilla Firefox 19+ */ color:#7e7e7e;}
@@ -139,7 +127,7 @@ textarea::-webkit-scrollbar-track {background-color:#f1f1f1;-webkit-border-radiu
 textarea::-webkit-scrollbar-thumb {background-color:#ccc;-webkit-border-radius: 2em;-moz-border-radius: 2em;border-radius:2em;}
 select{border: 1px solid #ececec;color: #7e7e7e;padding-left: 10px;}
 /* 提交按钮样式 */
-.wlb-btn{background: #ff8a04;color: #fff;height: 35px;line-height: 35px;text-align: center;border-radius: 4px;width: 50%;margin: 0 auto;cursor: pointer;}
+.wlb-btn{background: #ff8a04;color: #fff;height: 35px;line-height: 35px;text-align: center;border-radius: 4px;width: 50%;margin: 40px auto 0 auto;cursor: pointer;}
 
 /* 成功样式 */
 .wlb-cheng{margin: 120px auto 0 auto; width: 100%;height: 370px;background: url("../../assets/images/wlb2.png")no-repeat; background-size: 100%;}

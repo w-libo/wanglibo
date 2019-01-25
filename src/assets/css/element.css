@@ -6,3 +6,7 @@
 
 /*修改element-ui默认走马灯选中样式*/
 .el-carousel__indicator.is-active button {opacity: 1;background:#ff8a04;}
+
+/*修改element-ui默认时间选择样式框*/
+.el-date-editor{width: 100%;}
+.el-input{width: 100% !important;}

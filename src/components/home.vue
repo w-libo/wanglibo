@@ -2,10 +2,10 @@
 
   <div id="home">
     <template>
-      <el-carousel :interval="2000" arrow="hover">
-        <el-carousel-item v-for="item in superurl">
+      <el-carousel :interval="2000" arrow="always">
+          <el-carousel-item v-for="item in superurl">
           <router-link :to="item.url"><img :src="item.img"/></router-link>
-        </el-carousel-item>
+          </el-carousel-item>
       </el-carousel>
     </template>
 

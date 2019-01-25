@@ -37,8 +37,18 @@
                 <span class="wlb-blog-fl">{{blog.author}}</span>
             </div>
             <div class="wlb-blog-r">
-                <span @click="deleteSingleBlog()"><i class="wlb-del"></i>删除</span>
-                <span><router-link :to="'/EditBlog/'+ id"><i class="wlb-bj"></i>编辑</router-link></span>
+                <span @click="deleteSingleBlog()" @mouseenter="showActive(1)" @mouseleave="showActive(0)">
+                  <img src="../../assets/images/wlb7.png" alt="删除" class="del-img" v-show="active === 0">
+                  <img src="../../assets/images/wlb9.png" alt="删除" v-show="active === 1" class="del-img">
+                  删除
+                </span>
+                <span @mouseenter="showbj(1)" @mouseleave="showbj(0)">
+                  <router-link :to="'/EditBlog/'+ id">
+                    <img src="../../assets/images/wlb6.png" alt="删除"  v-show="showBj === 0" class="bJi-img">
+                    <img src="../../assets/images/wlb8.png" alt="删除" v-show="showBj === 1"  class="bJi-img">
+                    编辑
+                  </router-link>
+                </span>
             </div>
         </div>
     </div>
@@ -51,7 +61,9 @@ export default{
   data () {
     return {
       id: this.$route.params.id,
-      blog: {}
+      blog: {},
+      active: 0,
+      showBj: 0
     }
   },
   created () {
@@ -70,12 +82,19 @@ export default{
         .then(response => {
           this.$router.push({path: '/ShowBlogs'})
         })
+    },
+    showActive (index) {
+      this.active = index
+    },
+    showbj (index) {
+      this.showBj = index
     }
   }
 }
 
 </script>
 <style scoped>
+  @import './../../assets/css/blogHeader.css';
 #single-blog{max-width: 1200px;margin: 130px auto 0 auto;}
 .wlb-blog-xq{max-width: 1200px; margin: 110px 20px 0 20px;padding: 20px;-webkit-box-sizing: border-box;box-sizing: border-box;background: #fff;border-radius: 6px;-webkit-box-shadow: 0px 0px 8px #dad7d7;box-shadow: 0px 0px 8px #dad7d7;}
 .wlb-blog-bt{font-size: 20px;}
@@ -91,6 +110,7 @@ export default{
 .wlb-blog-r span:hover{color: #ff8a04;}
 .wlb-blog-r span a{color: #818181;text-decoration: none;}
 .wlb-blog-r span a:hover{color: #ff8a04;}
-.wlb-del{display:inline-block; width: 20px; height: 20px;background: url("../../assets/images/wlb7.png")no-repeat;background-size: 100%;vertical-align: middle;margin: -4px 4px 0 0;}
-.wlb-bj{display:inline-block; width: 18px; height: 20px;background: url("../../assets/images/wlb6.png")no-repeat;background-size: 100%;vertical-align: middle;margin: -3px 4px 0 0;}
+.del-img{display: inline-block;vertical-align: middle;width: 24px;margin-top: -4px;}
+.bJi-img{display: inline-block;vertical-align: middle;width: 20px;margin-top: -4px;}
+
 </style>
