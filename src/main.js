@@ -14,7 +14,10 @@ import {
   DatePicker,
   TimeSelect,
   Message,
-  Dialog
+  Dialog,
+  Menu,
+  MenuItem,
+  Submenu
 } from 'element-ui' // 按需引入element-ui框架
 
 import App from './App'
@@ -40,6 +43,9 @@ Vue.use(VueResource)
 Vue.use(VueRouter)
 Vue.prototype.$message = Message
 Vue.use(Dialog)
+Vue.use(Menu)
+Vue.use(MenuItem)
+Vue.use(Submenu);
 
 Vue.config.productionTip = false
 

@@ -6,7 +6,21 @@
 
 /*修改element-ui默认走马灯选中样式*/
 .el-carousel__indicator.is-active button {opacity: 1;background:#ff8a04;}
+.el-carousel__container {position: relative;height: 540px;}
 
 /*修改element-ui默认时间选择样式框*/
 .el-date-editor{width: 100%;}
 .el-input{width: 100% !important;}
+
+/*修改element-ui默认导航菜单样式*/
+.el-menu-demo{width: 1200px; margin: 0 auto;border-bottom: 0;}
+.el-menu.el-menu--horizontal {border-bottom:0;}
+.el-menu-item{padding: 0;}
+.el-menu-item:hover{background: #000;}
+.el-menu-item a{text-decoration: none;display: block;padding: 0 15px;}
+.el-menu--horizontal>.el-menu-item:hover {background: none !important;}
+.el-menu--horizontal>.el-menu-item a:hover {color: #ff8a04;}
+.el-menu--horizontal>.el-menu-item {height: 42px;line-height: 42px;margin: 25px 0 25px 15px;font-size: 18px;font-weight: 400;}
+.el-menu--horizontal>.el-menu-item {color: #fff;}
+
+
