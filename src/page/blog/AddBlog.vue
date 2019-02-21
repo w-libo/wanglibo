@@ -176,20 +176,20 @@ export default {
 <style scoped>
   @import './../../assets/css/blogHeader.css';
 /* placeholder样式 */
-input::-webkit-input-placeholder{color:#cecece;color:#cecece;}
-input::-moz-placeholder{   /* Mozilla Firefox 19+ */ color:#cecece;}
-input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */color:#cecece;}
-input:-ms-input-placeholder{  /* Internet Explorer 10-11 */ color:#cecece;}
-textarea::-webkit-input-placeholder{color:#cecece;color:#cecece;}
-textarea::-moz-placeholder{   /* Mozilla Firefox 19+ */ color:#cecece;}
-textarea:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */color:#cecece;}
-textarea:-ms-input-placeholder{  /* Internet Explorer 10-11 */ color:#cecece;}
+input::-webkit-input-placeholder{color:#cecece;color:#cecece; font-family: "PingFang-SC-Semibold" ! important;}
+input::-moz-placeholder{   /* Mozilla Firefox 19+ */ color:#cecece;font-family: "PingFang-SC-Semibold" ! important;}
+input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */color:#cecece;font-family: "PingFang-SC-Semibold" ! important;}
+input:-ms-input-placeholder{  /* Internet Explorer 10-11 */ color:#cecece;font-family: "PingFang-SC-Semibold" ! important;}
+textarea::-webkit-input-placeholder{color:#cecece;color:#cecece;font-family: "PingFang-SC-Semibold" ! important;}
+textarea::-moz-placeholder{   /* Mozilla Firefox 19+ */ color:#cecece;font-family: "PingFang-SC-Semibold" ! important;}
+textarea:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */color:#cecece;font-family: "PingFang-SC-Semibold" ! important;}
+textarea:-ms-input-placeholder{  /* Internet Explorer 10-11 */ color:#cecece;font-family: "PingFang-SC-Semibold" ! important;}
 
 /* 添加博客 */
 #add-blog * {box-sizing: border-box;}
 #add-blog {margin: 20px auto;max-width: 600px;padding: 20px;}
-input[type="text"],textarea,select {display: block;width: 100%;height:40px; border-radius: 6px; line-height: 40px; margin-bottom: 20px; color: #606266;}
-textarea {height: 200px;resize:none;overflow-y: auto; font-size: 14px;line-height: 20px;padding-top: 5px;}
+input[type="text"],textarea,select {display: block;width: 100%;height:40px; font-family: "PingFang-SC-Semibold" ! important; border-radius: 6px; line-height: 40px; margin-bottom: 20px; color: #606266;}
+textarea {height: 200px;resize:none;overflow-y: auto; font-family: "PingFang-SC-Semibold" ! important; font-size: 14px;line-height: 20px;padding-top: 5px;}
 .wlb-addblog{margin-top: 90px;}
 .wlb-bod{border: 1px solid #dcdfe6;outline: none;padding-left: 12px;padding-right: 2px;}
 .wlb-top{margin-top: 20px;padding-left: 12px;}

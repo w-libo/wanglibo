@@ -27,8 +27,8 @@
             </div>
         </div>
     </div>
-
-    <div  class="single-blog" v-for="blog in filteredBlogs" :key="blog.value" v-theme:column="'wide'">
+    <div v-if="filteredBlogs.length > 0">
+    <div  class="single-blog"  v-for="blog in filteredBlogs" :key="blog.value" v-theme:column="'wide'">
         <router-link v-bind:to="'/SingleBlog/' + blog.id">
             <h2 class="wlb-bt-txt" v-rainbow>{{blog.title | to-uppercase}}</h2>
         </router-link>
@@ -38,6 +38,11 @@
         <div class="footer-txt">
           {{blog.value2}}
         </div>
+    </div>
+    </div>
+    <div class="noSearch" v-else>
+      <img src="../../assets/images/wlb11.png" alt="">
+      <p>没有找到<span>"{{search}}"</span>相关的内容</p>
     </div>
 
   </div>
@@ -104,7 +109,7 @@ export default {
      /* 搜索样式 */
     .search{display: inline-block;width: 270px;position: relative;margin-left: 10px;margin-top: 28px;}
     input[type="text"]{display: block;width: 100%;    height: 38px;text-indent: 40px;margin-top: 2px;background: 0 0;outline: none;border: 1px solid #dddfe6;font-size: 16px;border-radius: 30px;font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC","Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing: antialiased;}
-    .ico{display: block;position: absolute;width: 15px;height: 15px;left: 15px;top: 13px;background: url(../../assets/images/wlb1.png) no-repeat;background-size: 100%;}
+    .ico{display: block;position: absolute;width: 15px;height: 15px;left: 15px;top: 13px;background: url("../../assets/images/wlb1.png") no-repeat;background-size: 100%;}
 
     /* placeholder样式 */
     input::-webkit-input-placeholder{color:#dddfe6;color:#dddfe6;}
@@ -119,4 +124,10 @@ export default {
     .wlb-bt-txt{font-size: 20px;padding: 20px 20px 0 20px;}
     .wlb-blog-cent{color: #999;font-size: 14px;line-height: 24px;margin-top: 10px;padding: 0 20px;}
     .footer-txt{font-size: 12px;color: #d2d0d0;border-top: 1px solid #eee;padding: 10px 20px 10px 20px;margin-top: 14px;}
+
+    /*未搜索到内容*/
+    .noSearch{width: 100%; text-align: center;margin-top: 20%;}
+    .noSearch img{width: 15%;margin-bottom: 20px;}
+    .noSearch p{font-size: 16px; color: #222;}
+    .noSearch p span{color: #ff8a04;}
 </style>

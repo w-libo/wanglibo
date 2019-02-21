@@ -23,4 +23,5 @@
 .el-menu--horizontal>.el-menu-item {height: 42px;line-height: 42px;margin: 25px 0 25px 15px;font-size: 18px;font-weight: 400;}
 .el-menu--horizontal>.el-menu-item {color: #fff;}
 
-
+/*修改element-ui默认下拉菜单字体*/
+.el-input--suffix .el-input__inner {font-family: "PingFang-SC-Semibold" ! important;}
