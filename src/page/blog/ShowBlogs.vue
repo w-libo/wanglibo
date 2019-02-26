@@ -127,7 +127,7 @@ export default {
 
     /*未搜索到内容*/
     .noSearch{width: 100%; text-align: center;margin-top: 20%;}
-    .noSearch img{width: 15%;margin-bottom: 20px;}
+    .noSearch img{width: 25%;margin-bottom: 20px;}
     .noSearch p{font-size: 16px; color: #222;}
     .noSearch p span{color: #ff8a04;}
 </style>
